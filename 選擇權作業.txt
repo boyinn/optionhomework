@@ -1,0 +1,76 @@
+1.1 longcall&shortcall
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+k=100 #糹基
+premiun_call=20 #舦
+
+ST = np.arange(0,500)
+payoff=np.maximum(ST-k,0) #莉
+long_call=payoff-premiun_call 
+plt.plot(ST,long_call)
+short_call=-payoff+premiun_call 
+plt.plot(ST,short_call)
+
+plt.xlabel("St") 
+plt.ylabel("payoff") 
+plt.title("longcall&shortcall") 
+
+plt.show()
+
+1.2longput&shortput
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+k=100 #糹基
+premiun_put=5 #舦
+
+ST = np.arange(0,200)
+payoff=np.maximum(k-ST,0) #莉
+long_put=payoff-premiun_put 
+plt.plot(ST,long_put)
+short_put=-payoff+premiun_put
+plt.plot(ST,short_put)
+
+2.longcall&longput&shortput
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+k1=80 #+c糹基
+k2=120 #+p糹基
+k3=130 #-p糹基
+
+premiun_call=15 #c舦
+premiun_put=5 #p舦
+
+ST = np.arange(0,250)
+
+payoff1=np.maximum(ST-k1,0) #莉
+long_call=payoff1-premiun_call 
+#plt.plot(ST,long_call)
+
+payoff2=np.maximum(k2-ST,0) #莉
+long_put=payoff2-premiun_put 
+#plt.plot(ST,long_put)
+
+payoff3=np.maximum(k3-ST,0) #莉
+short_put=-payoff3+premiun_put
+#plt.plot(ST,short_put)
+
+sum=long_call+long_put+short_put
+plt.plot(ST,sum)
+
+
+plt.xlabel("St") 
+plt.ylabel("payoff") 
+plt.title("longcall&longput&shortput") 
+
+plt.show()
+plt.xlabel("St") 
+plt.ylabel("payoff") 
+plt.title("longput&shortput") 
+
+plt.show()
